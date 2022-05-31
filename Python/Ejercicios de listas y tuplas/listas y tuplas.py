@@ -139,9 +139,9 @@ word = list(word)
 reversed_word = list(reversed_word)
 reversed_word.reverse()
 if word == reversed_word:
-print("Es un palíndromo")
+    print("Es un palíndromo")
 else:
-print("No es un palíndromo")
+    print("No es un palíndromo")
 
 '''
 Ejercicio 9
@@ -153,11 +153,11 @@ vocal.
 word = input("Introduce una palabra: ")
 vocals = ['a', 'e', 'i', 'o', 'u']
 for vocal in vocals:
-times = 0
-for letter in word:
-if letter == vocal:
-times += 1
-print("La vocal " + vocal + " aparece " + str(times) + " veces"
+    times = 0
+    for letter in word:
+        if letter == vocal:
+            times += 1
+    print("La vocal " + vocal + " aparece " + str(times) + " veces"
 )
 
 '''
@@ -170,10 +170,10 @@ pantalla el menor y el mayor de los precios.
 prices = [50, 75, 46, 22, 80, 65, 8]
 min = max = prices[0]
 for price in prices:
-if price < min:
-min = price
-elif price > max:
-max = price
+    if price < min:
+        min = price
+    elif price > max:
+        max = price
 print("El mínimo es " + str(min))
 print("El máximo es " + str(max))
 
@@ -188,9 +188,8 @@ a = (1, 2, 3)
 b = (-1, 0, 2)
 product = 0
 for i in range(len(a)):
-product += a[i]*b[i]
-print("El producto de los vectores" + str(a) + " y " + str(b) + " e
-s " + str(product))
+    product += a[i]*b[i]
+print("El producto de los vectores" + str(a) + " y " + str(b) + " es " + str(product))
 
 '''
 Ejercicio 12
@@ -200,22 +199,18 @@ Nota: Para representar matrices mediante listas usar listas
 anidadas, representando cada vector fila en una lista.
 '''
 
-a = ((1, 2, 3),
-(4, 5, 6))
-b = ((-1, 0),
-(0, 1),
-(1,1))
-result = [[0,0],
-[0,0]]
+a = ((1, 2, 3),(4, 5, 6))
+b = ((-1, 0),(0, 1),(1,1))
+result = [[0,0],[0,0]]
 for i in range(len(a)):
-for j in range(len(b[0])):
-for k in range(len(b)):
-result[i][j] += a[i][k] * b[k][j]
+    for j in range(len(b[0])):
+        for k in range(len(b)):
+            result[i][j] += a[i][k] * b[k][j]
 for i in range(len(result)):
-result[i] = tuple(result[i])
+    result[i] = tuple(result[i])
 result = tuple(result)
 for i in range(len(result)):
-print(result[i])
+    print(result[i])
 
 '''
 Ejercicio 13
@@ -224,18 +219,17 @@ números, separados por comas, los guarde en una lista y
 muestre por pantalla su media y desviación típica.
 '''
 
-sample = input("Introduce una muestra de números separados por coma
-s: ")
+sample = input("Introduce una muestra de números separados por comas: ")
 sample = sample.split(',')
 n = len(sample)
 for i in range(n):
-sample[i] = int(sample[i])
+    sample[i] = int(sample[i])
 sample = tuple(sample)
 sum = 0
 sumsq = 0
 for i in sample:
-sum += i
-sumsq += i**2
+    sum += i
+    sumsq += i**2
 mean = sum/n
 stdev = (sumsq/n-mean**2)**(1/2)
 print('La media es', mean, ', y la desviación típica es', stdev)
