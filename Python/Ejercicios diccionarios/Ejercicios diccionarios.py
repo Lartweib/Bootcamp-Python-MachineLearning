@@ -137,8 +137,7 @@ diccionario debe dejarla sin traducir.
 '''
 
 diccionario = {}
-palabras = input("Introduce la lista de palabras y traducciones en formato palabra:traducción separadas
-por comas: ")
+palabras = input("Introduce la lista de palabras y traducciones en formato palabra:traducción separadas por comas: ")
 for i in palabras.split(','):
   clave, valor = i.split(':')
   diccionario[clave] = valor
