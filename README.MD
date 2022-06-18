@@ -36,5 +36,5 @@ Bootcamp de Python con inteligencia artificial y machine learning.
 
 ## Author
 
-- Repositorio - [Lartweib](https://github.com/Lartweib)
+- Github - [Lartweib](https://github.com/Lartweib)
 - Linkedin - [@federico-daniel-ara](https://www.linkedin.com/in/federico-daniel-ara/)
