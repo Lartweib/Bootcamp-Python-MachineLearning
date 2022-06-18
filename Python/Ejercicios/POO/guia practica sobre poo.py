@@ -540,3 +540,114 @@ droid.languages # fijado en el constructor de la clase derivada #['Ewokese','Hut
 # CLASES.HERENCIA MULTIPLE
 #----------
 
+# Aunque no está disponible en todos los lenguajes de programación, Python sí permite que
+# los objetos pueden heredar de múltiples clases base.
+# Si en una clase se hace referencia a un método o atributo que no existe, Python lo buscará
+# en todas sus clases base. Es posible que exista una colisión en caso de que el método o
+# el atributo buscado esté, a la vez, en varias clases base. En este caso, Python resuelve el
+# conflicto a través del orden de resolución de métodos
+
+# Supongamos que queremos modelar la siguiente estructura de clases con herencia múltiple:
+
+class Droid:
+    def greet(self):
+        return 'Here a droid'
+class ProtocolDroid(Droid):
+    def greet(self):
+        return 'Here a protocol droid'
+class AstromechDroid(Droid):
+    def greet(self):
+        return 'Here an astromech droid'
+class SuperDroid(ProtocolDroid, AstromechDroid):
+    pass
+class HyperDroid(AstromechDroid, ProtocolDroid):
+    pass
+
+
+# Todas las clases en Python disponen de un método especial llamado mro() que devuelve una
+# lista de las clases que se visitarían en caso de acceder a un método o un atributo. También
+# existe el atributo __mro__ como una tupla de esas clases:
+
+SuperDroid.mro()
+# [__main__.SuperDroid,
+# __main__.ProtocolDroid,
+# __main__.AstromechDroid,
+# __main__.Droid, object]
+
+HyperDroid.__mro__
+# (__main__.HyperDroid,
+# __main__.AstromechDroid,
+# __main__.ProtocolDroid,
+# __main__.Droid, object)
+
+# Veamos el resultado de la llamada a los métodos definidos:
+
+super_droid = SuperDroid()
+hyper_droid = HyperDroid()
+super_droid.greet() # Here a protocol droid
+hyper_droid.greet() # Here an astromech droid
+
+
+#----------
+# CLASES.MIXINS
+#----------
+
+# Hay situaciones en la que nos interesa incorporar una clase base «independiente» de la
+# jerarquía establecida, y sólo a efectos de tareas auxiliares. Esta aproximación podría ayudar
+# a evitar colisiones en métodos o atributos reduciendo la ambigüedad que añade la herencia
+# múltiple. Estas clases auxiliares reciben el nombre de «mixins».
+
+# Veamos un ejemplo en el que usamos un «mixin» para mostrar las variables de un objeto:
+
+class Instrospection:
+    def dig(self):
+        print(vars(self)) # vars devuelve las variables del argumento
+class Droid(Instrospection):
+    pass
+
+droid = Droid()
+
+droid.code = 'DN-LD'
+droid.num_feet = 2
+droid.type = 'Power Droid'
+
+droid.dig() # { code : DN-LD , num_feet : 2, type : Power Droid }
+
+
+#----------
+# CLASES.MIXINS
+#----------
+
+
+# Aunque la herencia de clases nos permite modelar una gran cantidad de casos de uso en
+# términos de «is-a» (es un), existen muchas otras situaciones en las que la agregación o
+# la composición son una mejor opción. En este caso una clase se compone de otras cases:
+# hablamos de una relación «has-a» (tiene un).
+
+# Hay una sutil diferencia entre agregación y composición:
+
+# • La composición implica que el objeto utilizado no puede «funcionar» sin la presencia
+# de su propietario.
+# • La agregación implica que el objeto utilizado puede funcionar por sí mismo.
+
+# Veamos un ejemplo de agregación en el que añadimos una herramienta a un droide:
+
+class Tool:
+    def __init__(self, name):
+        self.name = name
+
+    def __str__(self):
+        return self.name.upper()
+class Droid:
+    def __init__(self, name, serial_number, tool):
+        self.name = name
+        self.serial_number = serial_number
+        self.tool = tool # agregación
+
+    def __str__(self):
+        return f'Droid {self.name} armed with a {self.tool}'
+
+lighter = Tool('lighter')
+bb8 = Droid('BB-8', 48050989085439, lighter)
+
+print(bb8) # Droid BB-8 armed with a LIGHTER
