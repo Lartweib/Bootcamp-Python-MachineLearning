@@ -1,7 +1,11 @@
-# Repositorio personal del Bootcamp del programa Enfoca't realizado en Fundacion Esplai
+# Bootcamp de Python con IA y ML
 
-Bootcamp de Python con inteligencia artificial y machine learning.
+Este es un repositorio personal sobre:
 
+- **Bootcamp**: _Python con inteligencia artificial y machine learning_
+- **Programa**: _Enfoca't_
+- **Facilitadores**: _Fundacion Esplai_
+  
 ## Links del repositorio
 
 - [Html - Css - Bootstrap](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/HTML%20-%20CSS%20-%20Bootstrap/Contenido)
