@@ -21,3 +21,41 @@ aproveche para inicializar el «driver» ocultando la ventana del navegador.
 Puede probar su programa con la localización de Las Palmas de Gran Canaria (28.1035677,
 -15.5319742).
 '''
+
+import os
+from selenium import webdriver
+from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+
+options=Options()
+options.add_argument("--kiosk")
+options.headless = True
+
+driver = webdriver.Firefox(options=options, service_log_path=os.devnull)
+
+lat = 28.1035677
+lon = -15.5319742
+
+driver.get(f'https://info.mercadona.es/es/supermercados?coord={lat}%2C{lon}')
+
+accept_cookies = driver.find_element_by_id('third-btn')  
+accept_cookies.click()
+
+body = driver.find_element_by_tag_name('body')
+driver.execute_script('arguments[0].scrollIntoView(false)', body)
+
+vermas_xpath = '/html/body/div[1]/div[3]/div/div/div[2]/div[1]/ul/div/button'
+vertodos = WebDriverWait(driver, 5 ).until(EC.presence_of_element_located((By.XPATH,vermas_xpath)))
+vertodos.click()
+
+li_supermercados = driver.find_elements_by_class_name('panelLateralResultadosElemento')
+
+count = 1
+for supermercado in li_supermercados:
+    print(f'{count} - ',supermercado.find_element_by_tag_name('h3').text)
+    count += 1
+
+
+driver.quit()
