@@ -5,10 +5,8 @@ Ejercicio 1
 Escribir un programa que pregunte al usuario su edad y muestre por pantalla si es
 mayor de edad o no.
 '''
-from difflib import Match
-
-
 print("--- Ejercicio 1 ---")
+
 edad = int(input("Cual es tu edad? "))
 if edad < 18:
   print("Eres menor de edad")
@@ -21,6 +19,7 @@ introducida por el usuario coincide con la guardada en la variable sin tener en 
 mayúsculas y minúsculas.
 '''
 print("--- Ejercicio 2 ---")
+
 password = "contraseña"
 pass_ingresada= input("Ingrese su contraseña: ")
 if password.upper() == pass_ingresada.upper():

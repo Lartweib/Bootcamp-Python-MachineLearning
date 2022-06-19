@@ -126,22 +126,33 @@ elimine de la lista las letras que ocupen posiciones múltiplos de
 '''
 print("--- Ejercicio 7 ---")
 
+import string
+
+abc = list(string.ascii_lowercase)
+lista = []
+count = 1
+for letra in abc:
+    if count % 3 == 0:
+        lista.append(letra)
+    count += 1
+for l in lista:
+    abc.remove(l)
+print(abc)
 
 '''
 Ejercicio 8
 Escribir un programa que pida al usuario una palabra y
 muestre por pantalla si es un palíndromo.
 '''
+print("--- Ejercicio 8 ---")
 
-word = input("Introduce una palabra: ")
-reversed_word = word
-word = list(word)
-reversed_word = list(reversed_word)
-reversed_word.reverse()
-if word == reversed_word:
-    print("Es un palíndromo")
-else:
-    print("No es un palíndromo")
+palabra = input('Ingrese una palabra: ')
+reverse = palabra[::-1]
+if palabra == reverse:
+    print(f'La palabra "{palabra}" es palindroma!')
+else: 
+    print(f'La palabra "{palabra}" no es palindroma!')
+
 
 '''
 Ejercicio 9
@@ -149,16 +160,14 @@ Escribir un programa que pida al usuario una palabra y
 muestre por pantalla el número de veces que contiene cada
 vocal.
 '''
+print("--- Ejercicio 9 ---")
 
-word = input("Introduce una palabra: ")
-vocals = ['a', 'e', 'i', 'o', 'u']
-for vocal in vocals:
-    times = 0
-    for letter in word:
-        if letter == vocal:
-            times += 1
-    print("La vocal " + vocal + " aparece " + str(times) + " veces"
-)
+palabra = input('Ingrese una palabra: ')
+vocales = ['a','e','i','o','u']
+print(f'La palabra "{palabra}" contiene las siguientes vocales:')
+for v in vocales:
+    count = palabra.count(v)
+    print(f'"{v}": {count}')
 
 '''
 Ejercicio 10
@@ -166,6 +175,7 @@ Escribir un programa que almacene en una lista los
 siguientes precios, 50, 75, 46, 22, 80, 65, 8, y muestre por
 pantalla el menor y el mayor de los precios.
 '''
+print("--- Ejercicio 10 ---")
 
 prices = [50, 75, 46, 22, 80, 65, 8]
 min = max = prices[0]
@@ -183,6 +193,7 @@ Escribir un programa que almacene los vectores (1,2,3) y (-
 1,0,2) en dos listas y muestre por pantalla su producto
 escalar.
 '''
+print("--- Ejercicio 11 ---")
 
 a = (1, 2, 3)
 b = (-1, 0, 2)
@@ -198,6 +209,7 @@ en una lista y muestre por pantalla su producto.
 Nota: Para representar matrices mediante listas usar listas
 anidadas, representando cada vector fila en una lista.
 '''
+print("--- Ejercicio 12 ---")
 
 a = ((1, 2, 3),(4, 5, 6))
 b = ((-1, 0),(0, 1),(1,1))
@@ -218,6 +230,7 @@ Escribir un programa que pregunte por una muestra de
 números, separados por comas, los guarde en una lista y
 muestre por pantalla su media y desviación típica.
 '''
+print("--- Ejercicio 13 ---")
 
 sample = input("Introduce una muestra de números separados por comas: ")
 sample = sample.split(',')
@@ -233,4 +246,6 @@ for i in sample:
 mean = sum/n
 stdev = (sumsq/n-mean**2)**(1/2)
 print('La media es', mean, ', y la desviación típica es', stdev)
+
+
 
