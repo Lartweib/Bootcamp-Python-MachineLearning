@@ -18,7 +18,7 @@ Este es un repositorio personal sobre:
     - [Tipos de datos y control de flujo](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Python/Contenido/1-%20tipos%20de%20datos%20y%20control%20de%20flujo)
     - [Estructuras de datos](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Python/Contenido/2-%20estructuras%20de%20datos)
     - [Ficheros](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Python/Contenido/3-%20ficheros)
-    - [Funciones. excepciones y modulos](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Python/Contenido/4-%20funciones.%20excepciones%20y%20modulos)
+    - [Funciones, excepciones y modulos](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Python/Contenido/4-%20funciones.%20excepciones%20y%20modulos)
     - [Mysql](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Python/Contenido/5-%20mysql)
     - [MongoDB](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Python/Contenido/6-%20mongodb)
     - [Regexp](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Python/Contenido/7-%20regexp)
