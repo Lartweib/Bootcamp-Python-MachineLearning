@@ -90,7 +90,7 @@ triángulo rectángulo como el de más abajo, de altura el número introducido.
 *****
 '''
 print("--- Ejercicio 6 ---")
-numero = int(input("Ingrese un numero? "))
+numero = int(input("Ingrese un numero: "))
 i = 1
 while i <= numero:
   print("*"*i) 
@@ -118,15 +118,16 @@ triángulo rectángulo como el de más abajo.
 9 7 5 3 1
 '''
 print("--- Ejercicio 8 ---")
-numero = int(input("Ingrese un numero? "))
-string = "1"
+
+numero = int(input("Ingrese un numero: "))
+
+lista = []
+
 for i in range(1,numero,2):
-  if i == 1:
-    print(string)
-  else: 
-    string += " "
-    string += str(i)
-    print(string[::-1])
+  lista.insert(0,i)
+  for n in lista:
+    print(n, end=' ')
+  print('\n')  
 
 '''
 Ejercicio 9
@@ -135,15 +136,17 @@ variable, pregunte al usuario por la contraseña hasta que introduzca la contras
 correcta.
 '''
 print("--- Ejercicio 9 ---")
-password = "contraseña"
-pass_user = input("Introducir la contraseña: ")
-intentos = 1
-while (password).upper() != (pass_user).upper():
-  print("La contraseña es incorrecta.")
-  pass_user = input("Introducir la contraseña: ")
-  intentos += 1
-print("Contraseña correcta.")
-print(f"Ingreso aceptado luego de {intentos} intentos")
+
+contrasena = 'admin'
+contrasena_usuario = 0
+
+while True:
+  contrasena_usuario = input('Ingrese la contraseña: ')
+  if contrasena == contrasena_usuario:
+    print('Contraseña correcta!')
+    break
+  else: print("La contraseña ingresada es incorrecta, intente nuevamente.")
+
 
 '''
 Ejercicio 10
@@ -151,21 +154,20 @@ Escribir un programa que pida al usuario un número entero y muestre por pantall
 es un número primo o no.
 '''
 print("--- Ejercicio 10 ---")
-num = int(input("Ingrese un numero: "))
-primo = False
-if num < 1:
-  primo = False
-  
-elif num == 2:
-  primo = True
-else:
-  for i in range(2, num):
-    if num % i == 0:
-      primo = False
-      break
-if primo is True:
-  print(f"El numero {num} es primo.")
-else: print(f"El numero {num} no es primo")
+
+num = int(input('Ingrese un numero: '))
+
+no_primo = False
+div = 0
+for n in range(2, num):
+    if num % n == 0:
+        no_primo = True
+        div = n
+        break
+if no_primo:
+    print("No es primo", div, "es divisor")
+else: 
+    print("Es primo")
 
 '''
 Ejercicio 11
@@ -174,9 +176,10 @@ a una las letras de la palabra introducida empezando por la última.
 '''
 print("--- Ejercicio 11 ---")
 
-word = input("Introduce una palabra: ")
-for i in range(len(word)-1, -1, -1):
-    print(word[i])
+palabra = input('Ingrese una palabra: ')
+reverse = palabra[::-1]
+for letra in reverse:
+    print(letra)
 
 '''
 Ejercicio 12
@@ -185,13 +188,10 @@ muestre por pantalla el número de veces que aparece la letra en la frase.
 '''
 print("--- Ejercicio 12 ---")
 
-frase = input("Introduce una frase: ")
-letra = input("Introduce una letra")
-contador = 0
-for i in frase:
-    if i == letra:
-        contador += 1
-print("La letra '%s' aparece %2i veces en la frase '%s'." % (letra, contador, frase))
+frase = input('Ingrese una frase: ')
+letra = input('Ingrese una letra: ')
+cantidad = frase.count(letra)
+print(f'La letra "{letra}" aparece en la frase "{frase}" un total de {cantidad} veces.')
 
 '''
 Ejercicio 13
@@ -201,7 +201,7 @@ que el usuario escriba “salir” que terminará.
 print("--- Ejercicio 13 ---")
 
 while True:
-    frase = input("Introduce algo: ")
+    frase = input()
     if frase == "salir":
         break
     print(frase)
