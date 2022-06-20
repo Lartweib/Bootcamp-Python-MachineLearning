@@ -1,0 +1,60 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+
+        {% endblock %}
+        | mihifidem
+    </title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+    <header>
+        <div id="logotipo">
+            <img src="{% static 'img/logo.png' %}" alt="" />
+            <h1>Web con Django</h1>
+
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li>
+                <a href="/inicio">Inicio</a>
+            </li>
+            <li>
+                <a href="/hola-mundo">Hola Mundo </a>
+            </li>
+            <li>
+                <a href="/pagina-pruebas">Página de pruebas</a>
+            </li>
+            <li>
+                <a href="/contacto">Contacto</a>
+            </li>
+        </ul>
+    </nav>
+
+
+
+    <div id="content">
+        <div class="box">
+            <h2 class="title">Título prueba</h2>
+            {% block content %}
+            <strong>Contenido block original</strong>
+            <!-- No aparecera poprque lo sobreescribe -->
+            {% endblock %}
+
+        </div>
+
+    </div>
+    <footer>Fet amb love in Barcelona &copy;</footer>
+</body>
+
+</html>
