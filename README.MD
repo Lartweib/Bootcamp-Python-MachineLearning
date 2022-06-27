@@ -29,6 +29,7 @@ Este es un repositorio personal sobre:
     - [Regexp](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Python/Contenido/7-%20regexp)
     - [Scrapping](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Python/Contenido/8-%20scrapping)
     - [POO](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Python/Contenido/9-%20POO)
+    - [Django](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Django/contenido)
   - [Ejercicios](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Python/Ejercicios)
     - [Tipos de datos y cadenas](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Python/Ejercicios/Ejercicios%20tipos%20de%20datos%20y%20cadenas)
     - [Listas y tuplas](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Python/Ejercicios/Ejercicios%20de%20listas%20y%20tuplas)
@@ -41,6 +42,7 @@ Este es un repositorio personal sobre:
     - [Conexion con mysql](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Python/Ejercicios/conexion%20con%20mysql)
     - [Pokemon_bbdd](https://github.com/JunJunDAM/pokemon_bbdd)
     - [POO](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Python/Ejercicios/POO)
+    - [Django](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Django/ejemplos)
 - [Estadistica](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Estadistica)
   - [Contenido](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Estadistica/Contenido)
 
