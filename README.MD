@@ -41,6 +41,8 @@ Este es un repositorio personal sobre:
     - [Conexion con mysql](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Python/Ejercicios/conexion%20con%20mysql)
     - [Pokemon_bbdd](https://github.com/JunJunDAM/pokemon_bbdd)
     - [POO](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Python/Ejercicios/POO)
+- [Estadistica](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Estadistica)
+  - [Contenido](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Estadistica/Contenido)
 
 ## Author
 
