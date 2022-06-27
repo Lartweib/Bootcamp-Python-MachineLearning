@@ -8,6 +8,11 @@ Este es un repositorio personal sobre:
   
 ## Links del repositorio
 
+- [Habilidades Transversales](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Transversales)
+- [Metodologias agiles - Scrum](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Scrum)
+  - [Contenido](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Scrum)
+- [Github](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Github)
+  - [Contenido](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Github)
 - [Html - Css - Bootstrap](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/HTML%20-%20CSS%20-%20Bootstrap/Contenido)
   - [Contenido](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/HTML%20-%20CSS%20-%20Bootstrap/Contenido)
 - [SQL](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/SQL)
@@ -36,7 +41,6 @@ Este es un repositorio personal sobre:
     - [Conexion con mysql](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Python/Ejercicios/conexion%20con%20mysql)
     - [Pokemon_bbdd](https://github.com/JunJunDAM/pokemon_bbdd)
     - [POO](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Python/Ejercicios/POO)
-- [Habilidades Transversales](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Transversales)
 
 ## Author
 
