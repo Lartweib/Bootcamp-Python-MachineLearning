@@ -127,7 +127,7 @@ def dfAnalisis(ruta:str):
     df_desc = df.describe()
     return df_desc.iloc[[3,7,1]]
 
-ruta = "D:/Federico/Proyectos GIT/Proyectos/Bootcamp-Python-MachineLearning/Estadistica/Pandas/ejercicios/cotizacion.csv"
+ruta = "Estadistica\Pandas\ejercicios/archivos\cotizacion.csv"
 
 df = dfAnalisis(ruta)
 
@@ -159,7 +159,7 @@ los siguientes requisitos:
 import pandas as pd
 
 # Parte 1
-df = pd.read_csv("Estadistica\Pandas\ejercicios/titanic.csv", sep=',')
+df = pd.read_csv("Estadistica\Pandas\ejercicios/archivos/titanic.csv", sep=',')
 print(df)
 
 # Parte 2
@@ -176,10 +176,165 @@ print(df.loc[148])
 
 # Parte 4
 print(df.iloc[range(0,df.shape[0],2)])
-s
+
 # Parte 5
 print(df[df["Pclass"]==1]['Name'].sort_values())
 
 # Parte 6
 print(df['Survived'].value_counts(normalize=True) * 100)
-#.value_counts devuelve recuentos unicos, al estar normalizado los cuenta y divide por la cantidad
+#.value_counts devuelve recuentos unicos, al estar normalizado los cuenta y divide por la cantidad total
+
+# Parte 7
+print(df.groupby('Pclass')['Survived'].value_counts(normalize=True) *100)
+
+# Parte 8
+df.dropna(subset=['Age'])
+
+# Parte 9
+print(df.groupby(['Pclass','Sex'])['Age'].mean().unstack()['female'])
+# con groupby agrupamos por sexo y clase, luego sacamos la media de edad por los grupos, con unstack
+# pivotamos el nivel de las etiquetas sexo para que aparezcan como columnas y por ultimo solo mostramos las mujeres
+
+# Parte 10
+df['Young'] = df['Age'] < 18
+print(df)
+
+# Parte 11
+print(df.groupby(['Pclass', 'Young'])['Survived'].value_counts(normalize = True) * 100)
+
+
+'''
+Ejercicio 8
+
+Los ficheros emisiones-2016.csv, emisiones-2017.csv, emisiones-2018.csv y emisiones-2019.csv, 
+contienen datos sobre las emisiones contaminates en la ciudad de Madrid en los años 2016, 2017, 
+2018 y 2019 respectivamente. Escribir un programa con los siguientes requisitos:
+
+    1. Generar un DataFrame con los datos de los cuatro ficheros. 
+    2. Filtrar las columnas del DataFrame para quedarse con las columnas ESTACION, 
+    MAGNITUD, AÑO, MES y las correspondientes a los días D01, D02, etc. 
+    3. Reestructurar el DataFrame para que los valores de los contaminantes de las columnas de los
+    días aparezcan en una única columna. 
+    4. Añadir una columna con la fecha a partir de la concatenación del año, el mes y el día (usar el
+    módulo datetime). 
+    5. Eliminar las filas con fechas no válidas (utilizar la función isnat del módulo numpy) y 
+    ordenar el DataFrame por estaciones contaminantes y fecha. 
+    6. Mostrar por pantalla las estaciones y los contaminantes disponibles en el DataFrame. 
+    7. Crear una función que reciba una estación, un contaminante y un rango de fechas y devuelva
+    una serie con las emisiones del contaminante dado en la estación y rango de fechas dado. 
+    8. Mostrar un resumen descriptivo (mínimo, máximo, media, etc.) para cada contaminante. 
+    9. Mostrar un resumen descriptivo para cada contaminante por distritos. 
+    10.Crear una función que reciba una estación y un contaminante y devuelva un resumen 
+    descriptivo de las emisiones del contaminante indicado en la estación indicada. 
+    11.Crear una función que devuelva las emisiones medias mensuales de un contaminante y un 
+    año dados para todos las estaciones. 
+    12.Crear un función que reciba una estación de medición y devuelva un DataFrame con las 
+    medias mensuales de los distintos tipos de contaminantes.
+'''
+
+import pandas as pd
+import numpy as np
+import datetime as dt
+
+
+# Parte 1
+e_2016 = pd.read_csv('Estadistica/Pandas/ejercicios/archivos/emisiones-2016.csv', sep = ';')
+e_2017 = pd.read_csv('Estadistica/Pandas/ejercicios/archivos/emisiones-2017.csv', sep = ';')
+e_2018 = pd.read_csv('Estadistica/Pandas/ejercicios/archivos/emisiones-2018.csv', sep = ';')
+e_2019 = pd.read_csv('Estadistica/Pandas/ejercicios/archivos/emisiones-2019.csv', sep = ';')
+
+emisiones = pd.concat([e_2016, e_2017, e_2018, e_2019])
+
+emisiones
+
+
+# Parte 2
+columnas = ['ESTACION', 'MAGNITUD', 'ANO', 'MES']
+
+columnas.extend([col for col in emisiones if col.startswith('D')])
+
+emisiones = emisiones[columnas]
+
+emisiones
+
+
+# Parte 3
+emisiones = emisiones.melt(id_vars=['ESTACION', 'MAGNITUD', 'ANO', 'MES'], var_name='DIA', value_name='VALOR')
+# con melt podemos cambiar la orientacion de las columnas
+# el parametro id_vars sirve para identificar las columnas que van a ser identificadoras
+# los parametros var_name y value_name se utilizan para darle nombre a las columnas creadas
+
+emisiones
+
+
+# Parte 4
+
+emisiones['DIA'] = emisiones.DIA.str.strip('D')
+# Primero eliminamos el caracter D del comienzo de la columna de los días
+
+emisiones['FECHA'] = emisiones.ANO.apply(str) + '/' + emisiones.MES.apply(str) + '/' + emisiones.DIA.apply(str)
+# Concatenamos las columnas del año, mes y día
+
+emisiones['FECHA'] = pd.to_datetime(emisiones.FECHA, format='%Y/%m/%d', infer_datetime_format=True, errors='coerce')
+# Convertimos la nueva columna al tipo fecha
+
+emisiones
+
+
+# Parte 5
+
+emisiones = emisiones.drop(emisiones[np.isnat(emisiones.FECHA)].index)
+
+emisiones.sort_values(['ESTACION', 'MAGNITUD', 'FECHA'])
+
+
+# Parte 6
+
+print('Estaciones:', emisiones.ESTACION.unique())
+print('Contaminantes:', emisiones.MAGNITUD.unique())
+# se utiliza cuando tratamos con una sola columna de un DataFrame y devuelve todos los elementos únicos de una columna
+
+# Parte 7
+
+def evolucion(estacion, contaminante, desde, hasta):
+    return emisiones[(emisiones.ESTACION == estacion) & (emisiones.MAGNITUD == contaminante) & (emisiones.FECHA >= desde) & (emisiones.FECHA <= hasta)].sort_values('FECHA').VALOR
+
+evolucion(4, 1, '2017/08/15','2018/04/10')
+
+# Parte 8
+
+emisiones.groupby('MAGNITUD').VALOR.describe()
+
+# Parte 9
+
+emisiones.groupby(['ESTACION', 'MAGNITUD']).VALOR.describe()
+
+# Parte 10
+
+def resumen(estacion, contaminante):
+    return emisiones[(emisiones.ESTACION == estacion) & (emisiones.MAGNITUD == contaminante)].VALOR.describe()
+
+print(f'Resumen de estacion 35 contaminante 8:\n {resumen(35, 8)}')
+
+print(f'Resumen de estacion 56 contaminante 8:\n {resumen(56, 8)}\n')
+
+
+# Parte 11
+
+def emisiones_medias_mensuales(contaminante, año):
+    return emisiones[(emisiones.MAGNITUD == contaminante) & (emisiones.ANO == año)].groupby(['ESTACION', 'MES']).VALOR.mean().unstack('MES')
+    # agrupa por estacion y mes, se le indica que saque la media de la columna VALOR, y luego que pivotee la columna mes para mostrarla horizontalmente
+
+emisiones_medias_mensuales(6, 2016)
+
+
+# Parte 12
+'''
+    12.Crear un función que reciba una estación de medición y devuelva un DataFrame con las 
+    medias mensuales de los distintos tipos de contaminantes.
+'''
+
+def medias_mensuales(estacion):
+    return emisiones[(emisiones.ESTACION == estacion)].groupby(['MAGNITUD', 'MES']).VALOR.mean().unstack('MAGNITUD')
+
+medias_mensuales(8)
