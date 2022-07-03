@@ -44,7 +44,14 @@ Este es un repositorio personal sobre:
     - [POO](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Python/Ejercicios/POO)
     - [Django](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Django/ejemplos)
 - [Estadistica](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Estadistica)
+  - [Datasets](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Estadistica/Datasets)
   - [Contenido](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Estadistica/Contenido)
+    - [Numpy](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Estadistica/Numpy)
+    - [Pandas](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Estadistica/Pandas)
+    - [MatPlotLib](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Estadistica/MatPlotLib)
+  - [Ejercicios](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Estadistica)
+    - [Pandas](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Estadistica/Pandas/ejercicios)
+    - [MatPlotLib](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Estadistica/MatPlotLib/Ejercicios)
 
 ## Author
 
