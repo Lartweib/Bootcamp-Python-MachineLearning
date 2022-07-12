@@ -52,6 +52,21 @@ Este es un repositorio personal sobre:
   - [Ejercicios](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Estadistica)
     - [Pandas](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Estadistica/Pandas/ejercicios)
     - [MatPlotLib](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Estadistica/MatPlotLib/Ejercicios)
+- [Machine Learning](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Machine%20Learning)
+  - [Datasets (28 en total)](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Machine%20Learning/02_Datasets)
+  - [Contenido](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Machine%20Learning)
+    - [Modelos](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Machine%20Learning/01_Modelos)
+    - [Datasets](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Machine%20Learning/02_Datasets)
+    - [Scikit Learn](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Machine%20Learning/03_Scikit%20Learn)
+    - [Overfitting y underfitting](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Machine%20Learning/04_Overfitting%20y%20underfitting)
+    - [Classification metrics](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Machine%20Learning/05_Classification%20metrics)
+    - [Cross validation](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Machine%20Learning/06_Cross%20validation)
+    - [Analisis Exploratorio de datos (EDA)](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Machine%20Learning/07_EDA)
+  - [Ejemplos](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Machine%20Learning/Ejemplos)
+    - [Iris](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Machine%20Learning/Ejemplos/iris)
+    - [Titanic](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Machine%20Learning/Ejemplos/titanic)
+  - [Ejercicios](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Machine%20Learning/Ejercicios)
+    - [Regresion Lineal](https://github.com/Lartweib/Bootcamp-Python-MachineLearning/tree/main/Machine%20Learning/Ejercicios/Regresion%20Lineal)
 
 ## Author
 
