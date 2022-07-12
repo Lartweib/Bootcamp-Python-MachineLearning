@@ -6,7 +6,6 @@ Escribir un programa que pregunte al usuario por las ventas de un rango de años
 pantalla una serie con los datos de las ventas indexada por los años, antes y después de aplicarles un
 descuento del 10%.
 '''
-from tokenize import String
 import pandas as pd
 
 def info_ventas(anio1,anio2):
@@ -192,8 +191,8 @@ df.dropna(subset=['Age'])
 
 # Parte 9
 print(df.groupby(['Pclass','Sex'])['Age'].mean().unstack()['female'])
-# con groupby agrupamos por sexo y clase, luego sacamos la media de edad por los grupos, con unstack
-# pivotamos el nivel de las etiquetas sexo para que aparezcan como columnas y por ultimo solo mostramos las mujeres
+# con groupby agrupamos por sexo y clase, luego sacamos la media de edad por los grupos, 
+# con unstack pivotamos el nivel de las etiquetas sexo para que aparezcan como columnas y por ultimo solo mostramos las mujeres
 
 # Parte 10
 df['Young'] = df['Age'] < 18
@@ -201,6 +200,7 @@ print(df)
 
 # Parte 11
 print(df.groupby(['Pclass', 'Young'])['Survived'].value_counts(normalize = True) * 100)
+#.value_counts devuelve recuentos unicos, al estar normalizado los cuenta y divide por la cantidad total
 
 
 '''
@@ -234,7 +234,6 @@ contienen datos sobre las emisiones contaminates en la ciudad de Madrid en los a
 
 import pandas as pd
 import numpy as np
-import datetime as dt
 
 
 # Parte 1
