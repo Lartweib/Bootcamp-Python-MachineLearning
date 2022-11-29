@@ -1,5 +1,7 @@
 # Bootcamp de Python con IA y ML
 
+- [Habilidades Transversales](./tree/main/Transversales)
+
 Este es un repositorio personal sobre:
 
 - **Bootcamp**: _Python con inteligencia artificial y machine learning_
