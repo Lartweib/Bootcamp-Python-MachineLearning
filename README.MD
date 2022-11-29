@@ -1,6 +1,6 @@
 # Bootcamp de Python con IA y ML
 
-- [Habilidades Transversales](./tree/main/Transversales)
+- [Habilidades Transversales](././tree/main/Transversales)
 
 Este es un repositorio personal sobre:
 
